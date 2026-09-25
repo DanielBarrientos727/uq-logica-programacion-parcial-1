@@ -1,14 +1,16 @@
 //Ejercicio 2a
 
+// Inicio del programa
+
 import java.util.Scanner;
 
-// Usamos Scanner para poder ingresar datos desde la terminal.
+// Nuevamente acá usamos el Scanner para poder ingresar datos desde la terminal, y supongo que la shell lo debe de entender.
 
 public class E2a {
 
     static void main(String[] args) {
 
-        // En el main se piden los datos que necesita el programa.
+        // En el main se va a pedir los datos al usuario
 
         double consumoHogar = ingresarRealD("¿Cuántos litros de agua consumen al día en el hogar? ");
 
@@ -35,7 +37,7 @@ public class E2a {
 
     public static double ingresarRealD(String mensaje) {
 
-        // Esta función permite ingresar un número decimal.
+        // Esta función permite ingresar un número decimal, el souble. 
 
         Scanner sc = new Scanner(System.in);
 
@@ -43,17 +45,17 @@ public class E2a {
 
         double valor = sc.nextDouble();
 
-        // nextDouble() lee el número decimal que ingresa el usuario.
+        // nextDouble() lee el número decimal que ingresa el usuario
 
         return valor;
 
-        // Retorna el valor ingresado.
+        // Retorna el valor ingresado
 
     }
 
     public static int ingresarEntero(String mensaje) {
 
-        // Esta función permite ingresar un número entero.
+        // Esta función permite ingresar un número entero, el int pues 
 
         Scanner sc = new Scanner(System.in);
 
@@ -69,7 +71,7 @@ public class E2a {
 
     public static double calculoPromedio(double consumoHogar, int personas) {
 
-        // Esta función recibe el consumo del hogar y la cantidad de personas.
+        // Esta función recibe el consumo de la vivienda y la cantidad de personas.
 
         double promedio = consumoHogar / personas;
 
@@ -77,25 +79,25 @@ public class E2a {
 
         return promedio;
 
-        // Retorna el promedio calculado.
+        // Retorna el promedio de la edad. 
 
     }
 
     public static String calculoConTot(double promedio) {
 
-        // Esta función recibe el promedio y revisa si el consumo es adecuado.
+        // Esta función recibe el promedio y revisa si el consumo es adecuado, a lo acordado 
 
         String mensaje = " ";
 
         if (promedio <= 100) {
 
-            // Si el promedio es menor o igual a 100 litros, el consumo se considera adecuado.
+            // Si el promedio es menor o igual a 100 litros, el consumo se considera adecuado
 
             mensaje = " Su hogar tiene el consumo de agua adecuado";
 
         } else {
 
-            // Si supera los 100 litros, se considera que hay exceso de consumo.
+            // Si supera los 100 litros de agua, se considera que hay ya un exceso de consumo
 
             mensaje = " Su hogar se está excediendo con el consumo de agua";
 
@@ -103,13 +105,13 @@ public class E2a {
 
         return mensaje;
 
-        // Retorna el mensaje correspondiente.
+        // Retorna el mensaje correspondiente
 
     }
 
     public static void generarMensaje(double consumoHogar, double promedio, String consumoTotal) {
 
-        // Recibe los resultados y los muestra en pantalla.
+        // Recibe los resultados y los muestra en pantalla 
 
         String mensajeF = "Los litros gastados al día fueron: " + consumoHogar
                 + " El promedio es de: " + promedio + consumoTotal;
@@ -118,8 +120,10 @@ public class E2a {
 
         System.out.println(mensajeF);
 
-        // Muestra el mensaje final en la terminal.
+        // Muestra el mensaje final en la terminal
 
     }
 
 }
+
+// Fin del programa
