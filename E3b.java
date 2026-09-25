@@ -17,8 +17,8 @@ public class E3b {
 
         String clasificacion = calcularClasificacion(consumo);
 
-        // Se manda el consumo a calcularClasificacion(), que determina la clasificación.
-        // El resultado se guarda en clasificacion.
+        // Se manda el consumo a calcularClasificacion(), que determina la clasificación
+        // El resultado se guarda en clasificacion
 
         generarMensaje(clasificacion);
 
@@ -40,7 +40,7 @@ public class E3b {
 
         return valor;
 
-        // Retorna el valor ingresado.
+        // Retorna el valor ingresado anteriormente allí
 
     }
 
@@ -52,20 +52,20 @@ public class E3b {
 
         if (consumo >= 15) {
 
-            // Si el consumo es mayor o igual a 15, se considera eficiente.
+            // Si el consumo es mayor o igual a 15, se considera eficiente
 
             mensaje = "Consumo eficiente";
 
         } else if (consumo >= 10) {
 
             // else if significa "sino, si".
-            // O sea, si no cumplió el if anterior, revisa esta nueva condición.
+            // O sea, si no cumplió el if anterior, revisa esta nueva condición
 
             mensaje = "Consumo moderado";
 
         } else {
 
-            // Si no cumple ninguna de las condiciones anteriores, llega al else.
+            // Si no cumple ninguna de las condiciones anteriores, llega al else
 
             mensaje = "Consumo alto";
 
@@ -87,7 +87,7 @@ public class E3b {
 
         System.out.println(mensaje);
 
-        // Muestra el mensaje final en la terminal.
+        // Muestra el mensaje final en la terminal, la shell lo ejecuta. 
 
     }
 

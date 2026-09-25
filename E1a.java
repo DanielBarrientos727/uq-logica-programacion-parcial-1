@@ -1,5 +1,7 @@
 //Ejercicio E1a
 
+// Inicio del programa
+
 import java.util.Scanner;
 
 // Usamos Snanner para poder ingresar datos, todo en una terminal, ya que asi es más fácil
@@ -20,7 +22,8 @@ public class E1a {
         double altura = ingresarRealD("¿Cuál es su altura?");
 
         // Ese double crea una variable que puede tener decimales, y se llama pues altura.
-        // Pues entiendo esto, al usuario se le dice: Ole, ¿Cuál es su edad? y luego, ¿Cuál es su altura? y el usuario pues responde con un número entero y un número decimal respectivamente, digamos, tengo 12 años
+        // Pues entiendo esto, al usuario se le dice: Ole, ¿Cuál es su edad? y luego, ¿Cuál es su altura? y el usuario pues responde con un número entero y un número decimal respectivamente, digamos,
+        //  tengo 12 años, aunque tengo 19.
         // Y mido 1.50 metros, entonces el programa pues guarda esos datos en las variables edad y altura, y luego hace un cálculo, que está más abajo, en la función calculoRestriccion, que básicamente dice: 
         // si tienes 12 años o más y mides más de 1.40 metros, entonces puedes entrar a la atracción, si no, no puedes entrar. Y si tienes más de 60 años, también puedes entra
 
@@ -30,11 +33,13 @@ public class E1a {
         
         generarMensaje(restriccion);
 
+            }
+
         // Aquí, como arriba ya se hizo el cálculo y toda esa vuelta
         //  y se guardó el resultado en la variable que se llama restriccion, 
         // lo que hacemos es pasar ese resultado a generarMensaje() para que lo muestre en pantalla del usuario, aunque esto puede salir en nuestra terminal.
 
-    }
+    
 
     public static int ingresarEntero(String mensaje) {
 
@@ -139,5 +144,4 @@ public class E1a {
     }
 }
 
-// Acá termina el código, y pues básicamente lo que hace es pedirle al usuario su edad y altura, y luego hacer un cálculo para ver si puede entrar a la atracción o no. Y terminar el main.
-
+// Fin del programa
