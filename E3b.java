@@ -1,5 +1,6 @@
 //Ejercicio E3b
 
+//Inicio del programa 
 import java.util.Scanner;
 
 // Usamos Scanner para poder ingresar datos desde la terminal.
@@ -91,3 +92,5 @@ public class E3b {
     }
 
 }
+
+//Fin del programa 
