@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación de Ejercicios - Lógica de Programación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación Retro -->
+    <nav class="navbar">
+        <div class="nav-brand">&gt;_ LÓGICA_PARCIAL_I</div>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="#ej-1a">Ejercicio 1A</a></li>
+            <li><a href="#ej-1b">Ejercicio 1B</a></li>
+            <li><a href="#ej-2a">Ejercicio 2A</a></li>
+            <li><a href="#ej-2b">Ejercicio 2B</a></li>
+            <li><a href="#ej-3b">Ejercicio 3B</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- Encabezado Principal -->
+        <header id="inicio" class="hero-header">
+            <h1>Documentación de Ejercicios de Programación</h1>
+            <p>Guía técnica y explicativa de los códigos Java desarrollados para el Parcial I de Lógica de Programación.</p>
+        </header>
+
+        <!-- EJERCICIO 1A -->
+        <section id="ej-1a" class="exercise-card">
+            <div class="card-header">
+                <h2>Ejercicio 1A — Restricción de Atracción</h2>
+                <span class="badge">E1a.java</span>
+            </div>
+            <div class="card-body">
+                <div class="section-block">
+                    <div class="section-title">¿Qué problema intenta resolver?</div>
+                    <p>Valida si una persona puede ingresar a una atracción de un parque de diversiones evaluando su edad y su estatura, permitiendo el ingreso bajo condiciones estándar o por acceso especial para adultos mayores.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Datos de entrada</div>
+                    <ul>
+                        <li><strong>Edad:</strong> Número entero (`int`) ingresado por teclado.</li>
+                        <li><strong>Altura:</strong> Número con decimales (`double`) ingresado por teclado (ej. `1.45`).</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Proceso y Lógica Utilizada</div>
+                    <p>Se utiliza una estructura condicional compuesta con operadores lógicos (`&&` y `||`) dentro de la función <code>calculoRestriccion</code>:</p>
+                    <ul>
+                        <li>Se verifica si <code>edad &gt;= 12</code> y <code>altura &gt; 1.40</code>.</li>
+                        <li>Se aplica una condición alternativa con <code>if (edad &gt; 60)</code> para otorgar acceso especial sin importar la estatura.</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Resultado Esperado</div>
+                    <p>Retorna y muestra en consola un mensaje de texto indicando si el usuario puede ingresar ("Bienvenido, puede ingresar a la atracción") o si es denegado ("No puede ingresar a la atracción :(").</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Explicación Sencilla del Código</div>
+                    <p>El programa inicia en el método <code>main</code> utilizando la clase <code>Scanner</code> (a través de funciones auxiliares) para capturar los datos del usuario. Estos datos se envían como parámetros a <code>calculoRestriccion(int edad, double altura)</code>, la cual procesa la lógica condicional y devuelve un <code>String</code> que luego se imprime mediante <code>generarMensaje()</code>.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Código Java (E1a.java)</div>
+                    <div class="code-container">
+                        <div class="code-header-bar">
+                            <span>E1a.java</span>
+                            <button class="copy-btn" data-target="code-1a">Copiar</button>
+                        </div>
+                        <pre><code id="code-1a">import java.util.Scanner;
+
+public class E1a {
+    
+    public static void main(String[] args) {
+        int edad = ingresarEntero("¿Cuál es su edad?");
+        double altura = ingresarRealD("¿Cuál es su altura?");
+        String restriccion = calculoRestriccion(edad, altura);
+        generarMensaje(restriccion);
+    }
+
+    public static int ingresarEntero(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        int valor = sc.nextInt();
+        return valor;
+    }
+
+    public static double ingresarRealD(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        double valor = sc.nextDouble();
+        return valor;
+    }
+
+    public static String calculoRestriccion(int edad, double altura) {
+        String mensaje = " ";
+
+        if (edad >= 12 && altura > 1.40) {
+            mensaje = "Bienvenido, puede ingresar a la atracción";
+        } else {
+            mensaje = "No puede ingresar a la atracción :(";
+        }
+
+        if (edad > 60) {
+            mensaje = "Bienvenido, puede ingresar a la atracción";
+        }
+
+        return mensaje;
+    }
+
+    public static void generarMensaje(String restriccion) {
+        System.out.println(restriccion);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 1B -->
+        <section id="ej-1b" class="exercise-card">
+            <div class="card-header">
+                <h2>Ejercicio 1B — Descuento en Tienda Deportiva</h2>
+                <span class="badge">E1b.java</span>
+            </div>
+            <div class="card-body">
+                <div class="section-block">
+                    <div class="section-title">¿Qué problema intenta resolver?</div>
+                    <p>Determina si un cliente aplica para una promoción o descuento especial en una tienda deportiva en función del valor de su compra, si es cliente frecuente o si supera cierta edad.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Datos de entrada</div>
+                    <ul>
+                        <li><strong>Valor de la compra:</strong> Número decimal (`double`).</li>
+                        <li><strong>Cliente frecuente:</strong> Valor booleano (`boolean` -> <code>true</code> o <code>false</code>).</li>
+                        <li><strong>Edad:</strong> Número entero (`int`).</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Proceso y Lógica Utilizada</div>
+                    <p>La función <code>calculoDescuento</code> evalúa dos criterios principales:</p>
+                    <ul>
+                        <li>Si <code>valorCompra &gt; 200000</code> y <code>clienteFrecuente == true</code>, aplica al descuento.</li>
+                        <li>Si <code>edad &gt; 65</code>, también se le otorga el beneficio de forma directa.</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Resultado Esperado</div>
+                    <p>Imprime en consola si el usuario aplica o no a la promoción ("Para la promoción usted aplica para el descuento").</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Explicación Sencilla del Código</div>
+                    <p>Demuestra el uso de tipos de datos variados (`double`, boolean, `int`), métodos de lectura especializados como <code>nextBoolean()</code>, y operadores relacionales y lógicos dentro de estructuras condicionales anidadas.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Código Java (E1b.java)</div>
+                    <div class="code-container">
+                        <div class="code-header-bar">
+                            <span>E1b.java</span>
+                            <button class="copy-btn" data-target="code-1b">Copiar</button>
+                        </div>
+                        <pre><code id="code-1b">import java.util.Scanner;
+
+public class E1b {
+
+    public static void main(String[] args) {
+        double valorCompra = ingresarRealD("¿Cuál el valor de la compra? ");
+        boolean clienteFrecuente = ingresarBoolean("¿Es un cliente frecuente? ");
+        int edad = ingresarEntero("¿Cuál es la edad del cliente? ");
+        String valorFinal = calculoDescuento(valorCompra, clienteFrecuente, edad);
+        generarMensaje(valorFinal);
+    }
+
+    public static double ingresarRealD(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        double valor = sc.nextDouble();
+        return valor;
+    }
+
+    public static int ingresarEntero(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        int valor = sc.nextInt();
+        return valor;
+    }
+
+    public static boolean ingresarBoolean(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        boolean valor = sc.nextBoolean();
+        return valor;
+    }
+
+    public static String calculoDescuento(double valorCompra, boolean clienteFrecuente, int edad) {
+        String mensaje = " ";
+
+        if (valorCompra > 200000 && clienteFrecuente == true) {
+            mensaje = "usted aplica para el descuento";
+        } else {
+            mensaje = "usted NO aplica para el descuento";
+        }
+
+        if (edad > 65) {
+            mensaje = "usted aplica para el descuento";
+        }
+
+        return mensaje;
+    }
+
+    public static void generarMensaje(String valorFinal) {
+        String mensaje = "Para la promoción " + valorFinal;
+        System.out.println(mensaje);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 2A -->
+        <section id="ej-2a" class="exercise-card">
+            <div class="card-header">
+                <h2>Ejercicio 2A — Análisis de Consumo Diario de Agua</h2>
+                <span class="badge">E2a.java</span>
+            </div>
+            <div class="card-body">
+                <div class="section-block">
+                    <div class="section-title">¿Qué problema intenta resolver?</div>
+                    <p>Calcula el consumo promedio diario de agua por persona en un hogar a partir del consumo total de litros y la cantidad de habitantes, clasificando el resultado en adecuado o elevado.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Datos de entrada</div>
+                    <ul>
+                        <li><strong>Consumo del hogar:</strong> Total de litros diarios (`double`).</li>
+                        <li><strong>Cantidad de personas:</strong> Número de habitantes (`int`).</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Proceso y Lógica Utilizada</div>
+                    <ul>
+                        <li><strong>Cálculo matemático:</strong> <code>promedio = consumoHogar / personas;</code></li>
+                        <li><strong>Evaluación condicional:</strong> Si <code>promedio &lt;= 100</code>, el consumo es adecuado; de lo contrario, se considera excesivo.</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Resultado Esperado</div>
+                    <p>Muestra el total de litros gastados, el promedio calculado por persona y la conclusión sobre si el hogar se excede o no.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Explicación Sencilla del Código</div>
+                    <p>Emplea división aritmética entre un número decimal y un entero. Separa responsabilidades en funciones independientes: una para calcular el promedio (<code>calculoPromedio</code>) y otra para evaluar el estado (<code>calculoConTot</code>).</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Código Java (E2a.java)</div>
+                    <div class="code-container">
+                        <div class="code-header-bar">
+                            <span>E2a.java</span>
+                            <button class="copy-btn" data-target="code-2a">Copiar</button>
+                        </div>
+                        <pre><code id="code-2a">import java.util.Scanner;
+
+public class E2a {
+
+    static void main(String[] args) {
+        double consumoHogar = ingresarRealD("¿Cuántos litros de agua consumen al día en el hogar? ");
+        int personas = ingresarEntero("¿Cuántas personas viven en el hogar? ");
+        double promedio = calculoPromedio(consumoHogar, personas);
+        String consumoTotal = calculoConTot(promedio);
+        generarMensaje(consumoHogar, promedio, consumoTotal);
+    }
+
+    public static double ingresarRealD(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        double valor = sc.nextDouble();
+        return valor;
+    }
+
+    public static int ingresarEntero(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        int valor = sc.nextInt();
+        return valor;
+    }
+
+    public static double calculoPromedio(double consumoHogar, int personas) {
+        double promedio = consumoHogar / personas;
+        return promedio;
+    }
+
+    public static String calculoConTot(double promedio) {
+        String mensaje = " ";
+        if (promedio <= 100) {
+            mensaje = " Su hogar tiene el consumo de agua adecuado";
+        } else {
+            mensaje = " Su hogar se está excediendo con el consumo de agua";
+        }
+        return mensaje;
+    }
+
+    public static void generarMensaje(double consumoHogar, double promedio, String consumoTotal) {
+        String mensajeF = "Los litros gastados al día fueron: " + consumoHogar
+                + " El promedio es de: " + promedio + consumoTotal;
+        System.out.println(mensajeF);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 2B -->
+        <section id="ej-2b" class="exercise-card">
+            <div class="card-header">
+                <h2>Ejercicio 2B — Servicio de Lavandería para Mascotas</h2>
+                <span class="badge">E2b.java</span>
+            </div>
+            <div class="card-body">
+                <div class="section-block">
+                    <div class="section-title">¿Qué problema intenta resolver?</div>
+                    <p>Calcula la tarifa del servicio de lavado para una mascota según su peso en kilogramos, aplicando una tarifa por kilo diferenciada y un descuento del 10% si la mascota pesa 10 kg o menos.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Datos de entrada</div>
+                    <ul>
+                        <li><strong>Peso de la mascota:</strong> Valor numérico (`double`).</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Proceso y Lógica Utilizada</div>
+                    <ul>
+                        <li>Calcula la tarifa base para peso menor o igual a 10 kg: <code>peso * 35000</code>.</li>
+                        <li>Calcula la tarifa para peso mayor a 10 kg: <code>peso * 50000</code>.</li>
+                        <li>Si <code>peso &lt;= 10</code>, calcula el 10% de descuento y lo resta al subtotal.</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Resultado Esperado</div>
+                    <p>Imprime el valor total a pagar (con o sin descuento aplicado) y el detalle del descuento si aplica.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Explicación Sencilla del Código</div>
+                    <p>Muestra cómo realizar operaciones aritméticas con porcentajes (`* 0.10`) y cómo utilizar estructuras <code>if-else</code> para manejar tarifas condicionadas por rangos numéricos.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Código Java (E2b.java)</div>
+                    <div class="code-container">
+                        <div class="code-header-bar">
+                            <span>E2b.java</span>
+                            <button class="copy-btn" data-target="code-2b">Copiar</button>
+                        </div>
+                        <pre><code id="code-2b">import java.util.Scanner;
+
+public class E2b {
+
+    static void main(String[] args) {
+        double peso = ingresarRealD("Por favor ingrese el peso de su mascotica: ");
+        String descuento = calculoDescuento(peso);
+        generarMensaje(descuento);
+    }
+
+    public static double ingresarRealD(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        double valor = sc.nextDouble();
+        return valor;
+    }
+
+    public static String calculoDescuento(double peso) {
+        String mensaje = " ";
+        double descuento = 0.0;
+        double mascotapeso10 = peso * 35000;
+        double mascotapesomayor = peso * 50000;
+
+        if (peso <= 10) {
+            descuento = mascotapeso10 * 0.10;
+            mascotapeso10 = mascotapeso10 - descuento;
+            mensaje = "El valor total a pagar con descuento aplicado es: "
+                    + mascotapeso10
+                    + " y el descuento fue de: "
+                    + descuento;
+        } else {
+            mensaje = "Usted no aplica para el descuento, el valor a pagar es "
+                    + mascotapesomayor;
+        }
+
+        return mensaje;
+    }
+
+    public static void generarMensaje(String descuento) {
+        System.out.println(descuento);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 3B -->
+        <section id="ej-3b" class="exercise-card">
+            <div class="card-header">
+                <h2>Ejercicio 3B — Clasificación de Consumo</h2>
+                <span class="badge">E3b.java</span>
+            </div>
+            <div class="card-body">
+                <div class="section-block">
+                    <div class="section-title">¿Qué problema intenta resolver?</div>
+                    <p>Clasifica el nivel de eficiencia o consumo en tres categorías distintas (eficiente, moderado o alto) a partir de un valor numérico ingresado.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Datos de entrada</div>
+                    <ul>
+                        <li><strong>Consumo:</strong> Valor numérico (`double`).</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Proceso y Lógica Utilizada</div>
+                    <p>Usa una cadena de decisiones anidadas <code>if - else if - else</code> (escalera de decisiones):</p>
+                    <ul>
+                        <li>Si <code>consumo &gt;= 15</code>: `"Consumo eficiente"`</li>
+                        <li>Sino, si <code>consumo &gt;= 10</code>: `"Consumo moderado"`</li>
+                        <li>Sino: `"Consumo alto"`</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Resultado Esperado</div>
+                    <p>Muestra en pantalla la clasificación obtenida (ej. "Clasificación: Consumo eficiente").</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Explicación Sencilla del Código</div>
+                    <p>Ilustra de forma clara el funcionamiento de las evaluaciones condicionales múltiples excluyentes mediante bloques <code>else if</code>, asegurando que se evalúe de mayor a menor restricción.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="section-title">Código Java (E3b.java)</div>
+                    <div class="code-container">
+                        <div class="code-header-bar">
+                            <span>E3b.java</span>
+                            <button class="copy-btn" data-target="code-3b">Copiar</button>
+                        </div>
+                        <pre><code id="code-3b">import java.util.Scanner;
+
+public class E3b {
+
+    public static void main(String[] args) {
+        double consumo = ingresarRealD("¿Cuál es el consumo de combustible? ");
+        String clasificacion = calcularClasificacion(consumo);
+        generarMensaje(clasificacion);
+    }
+
+    public static double ingresarRealD(String mensaje) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(mensaje);
+        double valor = sc.nextDouble();
+        return valor;
+    }
+
+    public static String calcularClasificacion(double consumo) {
+        String mensaje = " ";
+
+        if (consumo >= 15) {
+            mensaje = "Consumo eficiente";
+        } else if (consumo >= 10) {
+            mensaje = "Consumo moderado";
+        } else {
+            mensaje = "Consumo alto";
+        }
+
+        return mensaje;
+    }
+
+    public static void generarMensaje(String clasificacion) {
+        String mensaje = "Clasificación: " + clasificacion;
+        System.out.println(mensaje);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Documentación de Lógica de Programación — Universidad del Quindío (2026-2)</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

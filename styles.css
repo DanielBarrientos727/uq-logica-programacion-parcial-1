@@ -1,0 +1,341 @@
+/* =================================================================
+   ESTILOS FRUTIGER AERO / WINDOWS VISTA & XP (2004-2009)
+   ================================================================= */
+
+:root {
+    --sky-gradient-start: #e0f2fe;
+    --sky-gradient-mid: #bae6fd;
+    --sky-gradient-end: #d1fae5;
+    --glass-bg: rgba(255, 255, 255, 0.82);
+    --glass-card: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.95);
+    --shadow-aero: 0 10px 30px rgba(14, 116, 144, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+    --aero-blue-start: #38bdf8;
+    --aero-blue-end: #0284c7;
+    --aero-header-bg: linear-gradient(to bottom, #f0fdf4 0%, #e0f2fe 100%);
+    
+    --text-main: #1e293b;
+    --text-muted: #475569;
+    --accent-blue: #0284c7;
+    --accent-green: #059669;
+    
+    --font-ui: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-code: 'Consolas', 'Courier New', Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, var(--sky-gradient-start) 0%, var(--sky-gradient-mid) 50%, var(--sky-gradient-end) 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    line-height: 1.6;
+    padding-top: 65px;
+    min-height: 100vh;
+}
+
+/* Barra de Navegación Estilo Windows Aero / Vista Glass */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(224, 242, 254, 0.85));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(2, 132, 199, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.1);
+}
+
+.nav-brand {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    color: var(--accent-blue);
+    font-size: 1.05rem;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav-brand::before {
+    content: "🌐";
+    font-size: 0.9rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+    border: 1px solid rgba(203, 213, 225, 0.8);
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+    background: linear-gradient(to bottom, #38bdf8, #0284c7);
+    border-color: #0284c7;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 5px rgba(2, 132, 199, 0.3);
+}
+
+/* Contenedor Principal */
+.container {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Encabezado Principal Estilo Panel Aero */
+.hero-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-aero);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #38bdf8, #34d399, #60a5fa);
+}
+
+.hero-header h1 {
+    color: #0369a1;
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.hero-header p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Tarjetas de Ejercicios (Ventanas Glassmorphism Aero) */
+.exercise-card {
+    background: var(--glass-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-aero);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exercise-card:hover {
+    box-shadow: 0 15px 35px rgba(14, 116, 144, 0.22), 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    background: linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 100%);
+    border-bottom: 1px solid rgba(203, 213, 225, 0.8);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-header h2 {
+    color: #0f172a;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.badge {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    background: linear-gradient(to bottom, #e0f2fe, #bae6fd);
+    color: #0369a1;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #7dd3fc;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.card-body {
+    padding: 1.8rem;
+}
+
+/* Secciones internas de la tarjeta */
+.section-block {
+    margin-bottom: 1.5rem;
+}
+
+.section-block:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title::before {
+    content: "✦";
+    font-size: 0.8rem;
+    color: var(--accent-green);
+}
+
+p, li {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+strong {
+    color: #0f172a;
+}
+
+/* Bloque de Código Estilo IDE Vista / Windows */
+.code-container {
+    position: relative;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    margin-top: 0.8rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.code-header-bar {
+    background: linear-gradient(to bottom, #334155, #1e293b);
+    border-bottom: 1px solid #475569;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Botón Glossy estilo Vista / Aero */
+.copy-btn {
+    background: linear-gradient(to bottom, #38bdf8, #0284c7);
+    border: 1px solid #0369a1;
+    color: #ffffff;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.15s ease;
+}
+
+.copy-btn:hover {
+    background: linear-gradient(to bottom, #7dd3fc, #0284c7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 4px rgba(2, 132, 199, 0.4);
+}
+
+.copy-btn:active {
+    background: linear-gradient(to bottom, #0284c7, #0369a1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+pre {
+    padding: 1.2rem;
+    overflow-x: auto;
+    font-family: var(--font-code);
+    font-size: 0.88rem;
+    color: #a3be8c;
+    line-height: 1.5;
+}
+
+code {
+    font-family: var(--font-code);
+}
+
+/* Footer Educativo */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    margin-top: 4rem;
+}
+
+/* Responsivo para celulares y tabletas */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        gap: 0.5rem;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    body {
+        padding-top: 110px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-header {
+        padding: 1.5rem;
+    }
+
+    .card-body {
+        padding: 1.2rem;
+    }
+}

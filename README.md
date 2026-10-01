@@ -1,90 +1,34 @@
-# Parcial I - Lógica de Programación (02N - 2026-2)
+# Lógica de Programación — Grupo 02N (2026-2)
 
 [![Java Version](https://img.shields.io/badge/Java-17%2B-orange.svg)](https://www.oracle.com/java/)
 [![University](https://img.shields.io/badge/Universidad-Del%20Quind%C3%ADo-green.svg)](https://www.uniquindio.edu.co/)
 [![Faculty](https://img.shields.io/badge/Facultad-Ingenier%C3%ADa-blue.svg)](https://www.uniquindio.edu.co/)
 
-Repositorio con los ejercicios, análisis de Pensamiento Computacional y soluciones en Java correspondientes al **Parcial I del curso de Lógica de Programación (Grupo 02N - 2026-2)** del Programa de Ingeniería de Sistemas y Computación de la Universidad del Quindío.
+Repositorio de trabajo académico y desarrollo de prácticas, talleres y ejercicios en **Java** correspondientes al espacio académico de **Lógica de Programación (Grupo 02N - 2026-2)** del Programa de Ingeniería de Sistemas y Computación de la Universidad del Quindío.
 
 ---
 
-## 🎯 Resultados de Aprendizaje Evaluados
+## 🎯 Propósito del Repositorio
 
-* **R.A.1:** Identificar los fundamentos del proceso de solución de problemas mediante la construcción de aplicaciones basadas en el uso de un computador en el contexto de la Ingeniería de Sistemas y Computación.
-* **R.A.2:** Analizar un contexto de manera crítica para la identificación de requisitos funcionales, aplicando principios éticos y morales para solucionar problemas del entorno.
-
----
-
-## 📐 Estructura del Parcial y Contenido
-
-El parcial consta de **3 puntos principales**, estructurados bajo la metodología de **Pensamiento Computacional**:
-
-* Abstracción
-* Descomposición
-* Reconocimiento de Patrones
-* Codificación
-
-Además, se aplica la **modularización mediante funciones**.
-
-### 1. Expresiones Lógicas en Contexto (1.0 pt)
-
-#### 1.A — Validación de Acceso a Parque de Diversiones
-
-* **Condición:** Edad ≥ 12 y estatura > 1.40 m, o edad > 60 años (acceso especial).
-* **Valores de prueba:** `edad = 58`, `estatura = 1.45`
-* **Resultado:** `true`
-* **Justificación:** Cumple con la condición de edad ≥ 12 y estatura > 1.40 m.
-
-#### 1.B — Descuento en Tienda Deportiva
-
-* **Condición:** (Compra > $200.000 y cliente frecuente) o edad > 65 años.
-* **Valores de prueba:** `valorCompra = 180000`, `clienteFrecuente = false`, `edad = 68`
-* **Resultado:** `true`
-* **Justificación:** Cumple la condición de edad > 65 años.
+Este espacio está destinado a consolidar el proceso de aprendizaje mediante la resolución de problemas algorítmicos, aplicando metodologías de pensamiento computacional, modularización y buenas prácticas de programación en Java. Incluye soluciones a talleres evaluativos, prácticas de laboratorio y ejercicios aplicados.
 
 ---
 
-### 2. Pensamiento Computacional y Solución Modular (3.0 pts)
+## 📐 Contenido y Ejercicios Principales
 
-#### 2.A — Análisis de Consumo Diario de Agua (1.5 pts)
+El repositorio abarca diversas tipologías de problemas estructurados bajo la metodología de **Pensamiento Computacional** (Abstracción, Descomposición, Reconocimiento de Patrones y Codificación):
 
-Calcula el consumo promedio diario de agua por persona en una vivienda a partir del total de litros utilizados y la cantidad de habitantes.
+### 1. Expresiones Lógicas en Contexto
+* **Ejercicio 1.A (`Parcial-1/E1a.java`):** Validación de acceso a parque de diversiones mediante edad y estatura, con acceso especial por edad avanzada.
+* **Ejercicio 1.B (`Parcial-1/E1b.java`):** Evaluación de descuentos y promociones en tienda deportiva según valor de compra, frecuencia del cliente y edad.
 
-El consumo se clasifica de la siguiente manera:
+### 2. Pensamiento Computacional y Solución Modular
+* **Ejercicio 2.A (`Parcial-1/E2a.java`):** Análisis de consumo diario de agua por persona en viviendas y clasificación del nivel de consumo.
+* **Ejercicio 2.B (`Parcial-1/E2b.java`):** Cálculo de tarifas y descuentos en servicio de lavandería para mascotas según su peso.
 
-* **Consumo promedio ≤ 100 L/persona:** `"Consumo adecuado"`
-* **Consumo promedio > 100 L/persona:** `"Consumo elevado"`
-
-#### 2.B — Servicio de Lavandería para Mascotas (1.5 pts)
-
-Calcula la tarifa del servicio de lavado según el peso de la mascota e incluye un descuento cuando corresponda.
-
-| Peso de la Mascota | Valor por Kg | Descuento |
-| :----------------- | :----------- | :-------- |
-| **Hasta 10 kg**    | $35.000      | 10%       |
-| **Más de 10 kg**   | $50.000      | No aplica |
-
----
-
-### 3. Funciones Independientes (1.0 pt)
-
-#### 3.A — Cálculo de Consumo de Combustible (0.5 pts)
-
-Calcula el consumo de combustible utilizando la fórmula:
-
-$$
-\text{Consumo} = \frac{\text{Distancia Recorrida (km)}}{\text{Cantidad de Combustible (L)}}
-$$
-
-La función recibe los parámetros necesarios y retorna el consumo obtenido en **km/L**.
-
-#### 3.B — Clasificación del Consumo (0.5 pts)
-
-Clasifica el nivel de eficiencia según el rendimiento obtenido:
-
-* **Consumo ≥ 15:** `"Consumo eficiente"`
-* **10 ≤ Consumo ≤ 14.99:** `"Consumo moderado"`
-* **Consumo < 10:** `"Consumo alto"`
+### 3. Funciones Independientes y Clasificación
+* **Ejercicio 3.B (`Parcial-1/E3b.java`):** Clasificación condicional del nivel de eficiencia y rendimiento de consumo.
+* **Ejercicios complementarios (`Talleres/`):** Prácticas de acueducto, recomendación comercial y ejercicios básicos del semestre.
 
 ---
 
@@ -92,48 +36,64 @@ Clasifica el nivel de eficiencia según el rendimiento obtenido:
 
 * **Lenguaje:** Java (JDK 17 o superior)
 * **Metodología:** Pensamiento Computacional
-
   * Abstracción
   * Descomposición
   * Reconocimiento de Patrones
   * Codificación
-* **Diseño:** Modularización mediante funciones de responsabilidad única
+* **Diseño:** Modularización mediante funciones de responsabilidad única y reutilización de código (`Utilidades/Reutilizacion.java`).
+* **Documentación Web:** Interfaz web estática interactiva (`index.html`, `styles.css`, `script.js`) con estética Frutiger Aero para la explicación visual de los códigos.
 
 ---
 
-## 📊 Rúbrica de Evaluación
+## 🗂️ Estructura del Repositorio
 
-| Componente    |  Puntos | Criterios Evaluados                                                                   |
-| :------------ | :-----: | :------------------------------------------------------------------------------------ |
-| **Punto 1**   |  1.0 pt | Construcción correcta de expresiones booleanas y su evaluación                        |
-| **Punto 2.A** | 1.5 pts | Documentación de las 4 fases de Pensamiento Computacional + implementación en Java    |
-| **Punto 2.B** | 1.5 pts | Documentación de las 4 fases de Pensamiento Computacional + aplicación de condiciones |
-| **Punto 3.A** | 0.5 pts | Función de cálculo matemático con parámetros y retorno único                          |
-| **Punto 3.B** | 0.5 pts | Función de clasificación condicional                                                  |
-
-> ⚠️ **Nota:** La nota final del parcial depende del factor de sustentación oral (0.0 a 1.0).
->
-> **Nota Final = Nota Escrita × Factor de Sustentación**
+```text
+uq-logica-programacion-parcial-1/
+├── Parcial-1/                    # Ejercicios y evaluaciones del Parcial 1
+├── Parcial-2/                    # Espacio para el Parcial 2
+├── Parcial-3/                    # Espacio para el Parcial 3
+├── Talleres/                     # Talleres prácticos y ejercicios básicos
+├── Utilidades/                   # Clases auxiliares y reutilizables (Scanner)
+├── Guías/                        # Diapositivas, syllabus y material en PDF
+├── index.html, styles.css, ...   # Documentación web interactiva
+├── CONTRIBUTING.md               # Guía básica de Git y GitHub
+└── README.md                     # Descripción del repositorio
+```
 
 ---
 
-## 🚀 Ejecución del Proyecto
+## 📋 Normas de Trabajo
+
+Para mantener el proyecto organizado y facilitar la colaboración, se establecen las siguientes pautas:
+
+* **Nombres claros de archivos:** Utiliza nombres descriptivos y organizados según el parcial o taller correspondiente (evita nombres genéricos).
+* **Commits descriptivos:** Redacta mensajes de commit claros que indiquen qué se hizo o qué problema se resolvió (ej. `"Agrega validación de edad en E1a"`).
+* **No subir archivos innecesarios:** Respeta el archivo `.gitignore` para evitar subir archivos compilados (`.class`), carpetas de IDE (`.idea/`) o archivos temporales.
+* **Revisar el código antes de hacer merge:** Verifica que los programas compilen y funcionen correctamente antes de integrar cambios al repositorio principal.
+
+---
+
+## 🚀 Cómo Clonar y Ejecutar
 
 ### 1. Clonar el repositorio
-
 ```bash
 git clone https://github.com/tu-usuario/uq-logica-programacion-parcial-1.git
 ```
 
-### 2. Acceder al proyecto
-
+### 2. Acceder al directorio del proyecto
 ```bash
 cd uq-logica-programacion-parcial-1
 ```
 
-### 3. Compilar y ejecutar
+### 3. Compilar y ejecutar archivos Java
+Utiliza el compilador de Java desde la terminal:
+```bash
+javac Parcial-1/E1a.java
+java Parcial-1.E1a
+```
 
-La ejecución dependerá de la estructura y clases definidas en el proyecto.
+### 4. Ver la documentación web
+Abre el archivo **`index.html`** directamente en tu navegador web (como Firefox) para explorar la explicación detallada de cada código.
 
 ---
 
@@ -141,5 +101,5 @@ La ejecución dependerá de la estructura y clases definidas en el proyecto.
 
 **Daniel Barrientos**
 
-Estudiante de Ingeniería de Sistemas y Computación
-**Universidad del Quindío — 2026-2**
+Estudiante de Ingeniería de Sistemas y Computación  
+**Universidad del Quindío — Grupo 02N (2026-2)**
